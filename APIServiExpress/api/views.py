@@ -12,6 +12,13 @@ class UsuarioViewset(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer 
 
+    def get_queryset(self):
+        usuario = Usuario.objects.all()
+        email =self.request.GET.get('email')
+        if email:
+            usuario= usuario.filter(email=email)
+        return usuario
+
 # Create your views here.
 
 def home(request):
