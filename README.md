@@ -14,7 +14,7 @@
 ## Ejecutar : 
 
 ###### pip install -r requirements.txt
-###### python manahe.py makemigrations
-###### python manage.py migrations
+###### python manage.py makemigrations
+###### python manage.py migrate
 ###### python manage.py createsuperuser
 ###### python manage.py runserver
