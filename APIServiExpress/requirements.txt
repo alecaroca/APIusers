@@ -1,1 +1,2 @@
 django-rest-framework
+python -m pip install django-cors-headers
