@@ -10,6 +10,6 @@ router.register('usuario', UsuarioViewset)
 
 
 urlpatterns = [
-    path('', home, name="home"),
-    path('api/', include(router.urls)),
+    
+    path('', include(router.urls)),
 ]
