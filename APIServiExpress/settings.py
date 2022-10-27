@@ -23,10 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7mn60z6m19x_=a248%v)d3mfvh!s5!^#z$6!u)w(a#&ixk_a(k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
-heroku config:set DISABLE_COLLECTSTATIC=1
 
 
 # Application definition
@@ -127,7 +126,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
+import django_heroku
+heroku config:set DISABLE_COLLECTSTATIC=1
 STATIC_URL = 'static/'
 
 # Default primary key field type
