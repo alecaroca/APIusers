@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-7mn60z6m19x_=a248%v)d3mfvh!s5!^#z$6!u)w(a#&ixk_a(k
 DEBUG = True
 
 ALLOWED_HOSTS = []
+heroku config:set DISABLE_COLLECTSTATIC=1
 
 
 # Application definition
