@@ -51,8 +51,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-   
-    
 ]
 
 ROOT_URLCONF = 'APIServiExpress.urls'
@@ -85,12 +83,38 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-CORS_ALLOW_ALL_ORIGINS = True 
+CORS_ALLOW_ALL_ORIGINS = True
+COOR_ORIGIN_WHITELIST ={
+    'http://localhost',
+    'http://127.0.0.1:8200',
+    'http://127.0.0.1:8100',
+}
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8000',
     'http://localhost:8100',
     'http://localhost:8200',
+    'http://localhost:8101',
 ]
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
 
 
 # Password validation
@@ -126,7 +150,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-import django_heroku
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = 'static/'
