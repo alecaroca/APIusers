@@ -15,6 +15,8 @@ class BandejatrabajoViewset(viewsets.ModelViewSet):
             bandejatrabajo= bandejatrabajo.filter(rutempleado=rutempleado)
         return bandejatrabajo
         
+def home(request):
+    return render(request, 'api/home.html')      
     
 
 class ClienteViewset(viewsets.ModelViewSet):

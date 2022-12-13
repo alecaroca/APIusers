@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import BandejatrabajoViewset, ClienteViewset,EmpleadoViewset,FacturacionViewset,OtViewset,ProductosViewset,ProveedorViewset,ReservaViewset,ServicioViewset,VehiculosViewset,UsuarioViewset
+from .views import BandejatrabajoViewset, ClienteViewset,EmpleadoViewset,FacturacionViewset,OtViewset,ProductosViewset,ProveedorViewset,ReservaViewset,ServicioViewset,VehiculosViewset,UsuarioViewset,home
 
 from rest_framework import routers
 
@@ -20,4 +20,5 @@ router.register('Usuario', UsuarioViewset)
 urlpatterns = [
     
     path('', include(router.urls)),
+    path('home', home,name="home"),
 ]
