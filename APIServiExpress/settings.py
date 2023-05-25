@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-7mn60z6m19x_=a248%v)d3mfvh!s5!^#z$6!u)w(a#&ixk_a(k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ["https://alecaroca-vigilant-fishstick-4pr9vw954qwh7qxj-8000.preview.app.github.dev"]
 
 # Application definition
 
@@ -96,6 +96,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:8101',
 ]
 CORS_ALLOW_HEADERS = [
+    "Access-Control-Allow-Origin"
     "accept",
     "accept-encoding",
     "authorization",
@@ -108,7 +109,6 @@ CORS_ALLOW_HEADERS = [
 ]
 CORS_ALLOW_METHODS = [
     "DELETE",
-    "GET",
     "OPTIONS",
     "PATCH",
     "POST",

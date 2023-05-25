@@ -18,7 +18,6 @@ router.register('Usuario', UsuarioViewset)
 
 
 urlpatterns = [
-    
     path('', include(router.urls)),
     path('home', home,name="home"),
 ]
