@@ -41,3 +41,10 @@ class UserViewset(viewsets.ModelViewSet):
 class BandejaViewset(viewsets.ModelViewSet):
     queryset = Bandeja.objects.all()
     serializer_class = BandejaSerializer
+
+    def get_queryset(self):
+        reserva = Bandeja.objects.all()
+        rutempleado =self.request.GET.get('rutempleado')
+        if rutempleado:
+            reserva= reserva.filter(rutempleado=rutempleado)
+        return reserva   
