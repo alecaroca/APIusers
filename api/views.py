@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Bandejatrabajo,Cliente,Empleado,Facturacion,Ot,Productos,Proveedor,Reserva,Servicio,Vehiculos, Usuario
+from .models import Bandejatrabajo,Reserva, Usuario, User,Bandeja
 from rest_framework import viewsets
-from .serializers import BandejatrabajoSerializer, ClienteSerializer, EmpleadoSerializer, FacturacionSerializer, OtSerializer, ProductosSerializer, ProveedorSerializer, ReservaSerializer,ServicioSerializer, VehiculosSerializer, UsuarioSerializer
+from .serializers import BandejatrabajoSerializer, ReservaSerializer, UsuarioSerializer,UserSerializer,BandejaSerializer
 # Create your views here.
 
 class BandejatrabajoViewset(viewsets.ModelViewSet):
@@ -19,30 +19,6 @@ def home(request):
     return render(request, 'api/home.html')      
     
 
-class ClienteViewset(viewsets.ModelViewSet):
-    queryset = Cliente.objects.all()
-    serializer_class = ClienteSerializer      
-
-class EmpleadoViewset(viewsets.ModelViewSet):
-    queryset = Empleado.objects.all()
-    serializer_class = EmpleadoSerializer
-
-class FacturacionViewset(viewsets.ModelViewSet):
-    queryset = Facturacion.objects.all()
-    serializer_class = FacturacionSerializer
-
-class OtViewset(viewsets.ModelViewSet):
-    queryset = Ot.objects.all()
-    serializer_class = OtSerializer
-
-class ProductosViewset(viewsets.ModelViewSet):
-    queryset = Productos.objects.all()
-    serializer_class = ProductosSerializer
-
-class ProveedorViewset(viewsets.ModelViewSet):
-    queryset = Proveedor.objects.all()
-    serializer_class = ProveedorSerializer
-
 class ReservaViewset(viewsets.ModelViewSet):
     queryset = Reserva.objects.all()
     serializer_class = ReservaSerializer
@@ -54,14 +30,14 @@ class ReservaViewset(viewsets.ModelViewSet):
             reserva= reserva.filter(rutcliente=rutcliente)
         return reserva   
 
-class ServicioViewset(viewsets.ModelViewSet):
-    queryset = Servicio.objects.all()
-    serializer_class = ServicioSerializer
-
-class VehiculosViewset(viewsets.ModelViewSet):
-    queryset = Vehiculos.objects.all()
-    serializer_class = VehiculosSerializer
-
 class UsuarioViewset(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
+
+class UserViewset(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class BandejaViewset(viewsets.ModelViewSet):
+    queryset = Bandeja.objects.all()
+    serializer_class = BandejaSerializer
