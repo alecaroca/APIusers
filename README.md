@@ -5,7 +5,7 @@
 
 # Ruta API
 
-##### http://127.0.0.1:8000/api/
+##### https://alecaroca-vigilant-fishstick-4pr9vw954qwh7qxj-8000.preview.app.github.dev/User/
 
 
 # Ejecutar para su correcto funcionamiento.
